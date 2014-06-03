@@ -70,4 +70,5 @@ for a in paras:
                         postcode = ""
                     record = { "name" : name , "address" : address , "postcode" : postcode }
                     print record
+                    print type(name)
                     scraperwiki.sqlite.save(["name"], record) 
