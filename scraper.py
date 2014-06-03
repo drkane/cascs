@@ -57,18 +57,17 @@ for a in paras:
                     continue
                 else:
                     try:
-                        name = tds[0].contents[0]
+                        name = unicode(tds[0].contents[0])
                     except IndexError:
                         name = ""
                     try:
-                        address = tds[1].contents[0]
+                        address = unicode(tds[1].contents[0])
                     except IndexError:
                         address = ""
                     try:
-                        postcode = tds[2].contents[0]
+                        postcode = unicode(tds[2].contents[0])
                     except IndexError:
                         postcode = ""
                     record = { "name" : name , "address" : address , "postcode" : postcode }
                     print record
-                    print type(name)
                     scraperwiki.sqlite.save(["name"], record) 
