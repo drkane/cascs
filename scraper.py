@@ -68,6 +68,6 @@ for a in paras:
                         postcode = tds[2].contents[0]
                     except IndexError:
                         postcode = ""
-                    print name, address, postcode
                     record = { "name" : name , "address" : address , "postcode" : postcode }
+                    print record
                     scraperwiki.sqlite.save(["name"], record) 
